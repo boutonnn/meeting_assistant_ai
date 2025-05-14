@@ -53,6 +53,7 @@ async def analyze_file(id: int, db: Session = Depends(get_db)):
         return meeting_info
 
     try:
+        meeting_info.status = "in progress"
         meeting_info.summary = generate_summary(meeting_info.content)
         meeting_info.status = "completed"
         db.commit()
