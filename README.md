@@ -13,9 +13,8 @@ Basic unit tests for backend functionality.
 
 Architecture
 
-Backend: Built with FastAPI, SQLAlchemy for PostgreSQL 
-Frontend: React single-page application styled with Tailwind CSS.  
-integration, and OpenAI API for summarization.  
+Backend: Built with FastAPI, SQLAlchemy for PostgreSQL integration, and OpenAI API for summarization.  
+Frontend: React single-page application styled with Tailwind CSS.   
 Database: PostgreSQL to store file metadata and analysis results.  
 API: RESTful endpoints (/upload, /analyze, /results/{id}).  
 
@@ -29,24 +28,30 @@ OpenAI API key
 
 Backend Setup  
 
-Navigate to the backend directory:cd backend  
+Navigate to the backend directory:  
+cd backend  
 
 
-Create a virtual environment and activate it:python -m venv venv  
+Create a virtual environment and activate it:  
+python -m venv venv  
 source venv/bin/activate  # On Windows: venv\Scripts\activate  
 
 
-Install dependencies:pip install -r requirements.txt  
+Install dependencies:  
+pip install -r requirements.txt  
 
 
-Create a .env file in the backend directory:   DATABASE_URL=postgresql://user:password@localhost:5432/meeting_db  
+Create a .env file in the backend directory:  
+DATABASE_URL=postgresql://user:password@localhost:5432/meeting_db  
 OPENAI_API_KEY=your_openai_api_key_here  
 
 
-Set up the PostgreSQL database:createdb meeting_db  
+Set up the PostgreSQL database:  
+createdb meeting_db  
 
 
-Run the backend server:uvicorn app.main:app -- host 0.0.0.0 --port 8000 --reload  
+Run the backend server:  
+uvicorn app.main:app -- host 0.0.0.0 --port 8000 --reload  
 
 Frontend Setup  
 
