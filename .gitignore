@@ -1,0 +1,108 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+.env/
+.env
+.env.*  # optional for separate envs like .env.dev
+
+# Pytest cache
+.cache/
+.pytest_cache/
+
+# MyPy
+.mypy_cache/
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# SQLite / Postgres artifacts
+*.sqlite3
+*.db
+
+# Text files
+*.txt
+
+# Python eggs and packaging
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Jupyter notebooks
+*.ipynb
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# Static files
+staticfiles/
+
+
+# Node modules
+node_modules/
+
+# Build outputs
+dist/
+build/
+out/
+.vite/
+.next/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment variables
+.env
+.env.*.local
+
+# Editor/IDE settings
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Testing and coverage
+coverage/
+*.lcov
+
+# TypeScript
+*.tsbuildinfo
+
+# Tailwind CSS
+.tailwind.config.js
+.postcss.config.js
+
+# Cache
+.cache/
+turbo/
+
+# Misc
+*.log
+*.local
