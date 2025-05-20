@@ -13,7 +13,9 @@ Basic unit tests for backend functionality.
 
 Architecture
 
-Backend: Built with FastAPI, SQLAlchemy for PostgreSQL integration, and OpenAI API for summarization.  
+Backend: Built with FastAPI, SQLAlchemy for PostgreSQL 
+Frontend: React single-page application styled with Tailwind CSS.  
+integration, and OpenAI API for summarization.  
 Database: PostgreSQL to store file metadata and analysis results.  
 API: RESTful endpoints (/upload, /analyze, /results/{id}).  
 
@@ -21,6 +23,7 @@ Installation
 Prerequisites  
 
 Python 3.9+  
+Node.js 18+  
 PostgreSQL  
 OpenAI API key  
 
@@ -36,21 +39,34 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 Install dependencies:pip install -r requirements.txt  
 
 
-Create a .env file in the backend directory:DATABASE_URL=postgresql://user:password@localhost:5432/summaries  
+Create a .env file in the backend directory:   DATABASE_URL=postgresql://user:password@localhost:5432/meeting_db  
 OPENAI_API_KEY=your_openai_api_key_here  
 
 
-Set up the PostgreSQL database:createdb summaries  
+Set up the PostgreSQL database:createdb meeting_db  
 
 
-Run the backend server:uvicorn app.main:app --reload  
+Run the backend server:uvicorn app.main:app -- host 0.0.0.0 --port 8000 --reload  
+
+Frontend Setup  
+
+Navigate to the frontend directory:  
+cd frontend  
+
+
+Install dependencies:  
+npm install  
+
+
+Start the development server:  
+npm start  
 
 
 Running the Application  
 
 Ensure the PostgreSQL database is running.  
 Start the backend server (http://localhost:8000).  
-Start the frontend server (http://localhost:3000).  
+Start the frontend server (http://localhost:5147).  
 Open the frontend in a browser to upload files and view summaries.  
 
 API Documentation  
@@ -82,4 +98,5 @@ Notes
 
 The application assumes text input for simplicity. Audio processing can be added with libraries like pydub or speech_recognition.  
 The OpenAI API key must be provided via the .env file.  
+
 

@@ -9,6 +9,11 @@ from app.services.summarizer import generate_summary
 router = APIRouter()
 
 
+@router.get("/")
+async def root():
+    return {"msg": "welcome to the meeting assistant ai"}
+
+
 @router.post("/upload", response_model=SummaryResponse)
 async def upload_file(
     file: UploadFile = File(...), db: Session = Depends(get_db)
