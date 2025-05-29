@@ -49,7 +49,10 @@ def test_upload_file_invalid_type(client):
         files={"file": ("test.pdf", b"Invalid content", "application/pdf")},
     )
     assert response.status_code == 400
-    assert "Only .txt files are supported" in response.json()["detail"]
+    assert (
+        "Only .txt, .mp3, or .wav files are supported"
+        in response.json()["detail"]
+    )
 
 
 def test_analyze_file_success(client, db):
