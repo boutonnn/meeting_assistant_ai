@@ -43,3 +43,23 @@ def generate_summary(text: str) -> str:
         return response.choices[0].message.content
     except Exception as e:
         raise Exception(f"Error generating summary: {str(e)}")
+
+
+def transcribe_audio(file_path: str) -> str:
+    """
+    Transcribe an audio file using OpenAI's Whisper API.
+
+    Args:
+        file_path (str): Path to the audio file.
+
+    Returns:
+        str: The transcribed text.
+    """
+    try:
+        with open(file_path, "rb") as audio_file:
+            transcription = client.audio.transcriptions.create(
+                model="whisper-1", file=audio_file
+            )
+        return transcription.text
+    except Exception as e:
+        raise Exception(f"Error transcribing audio: {str(e)}")
